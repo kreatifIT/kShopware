@@ -1,0 +1,19 @@
+package: kShopware
+author: Kreatif GmbH
+version: '0.0.1'
+
+requires:
+    redaxo: '>=5.14'
+
+
+page:
+    title: Shopware
+    prio: 30
+    icon: rex-icon fa-shopping-cart
+    perm: kShopware[]
+    subpages:
+        settings:
+            title: Einstellungen
+            icon: rex-icon fa-gear
+            itemclass:
+            perm: kShopware[]
