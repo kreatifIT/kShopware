@@ -12,4 +12,9 @@ class CategoryApi extends Api
         return parent::request('POST', 'store-api/category', $bodyParams, $queryParams);
     }
 
+    public function fetchCategory($id, $bodyParams = [], $queryParams = [])
+    {
+        return parent::request('POST', 'store-api/category/' . $id, $bodyParams, $queryParams);
+    }
+
 }

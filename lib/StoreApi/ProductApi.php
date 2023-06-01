@@ -11,7 +11,8 @@ class ProductApi extends Api
 {
     public function fetchProductList($bodyParams = [], $queryParams = [])
     {
-        return parent::request('POST', 'store-api/product', $bodyParams, $queryParams);
+        $data = parent::request('POST', 'store-api/product', $bodyParams, $queryParams);
+        return $data;
     }
 
     public function fetchProduct($id, $bodyParams = [], $queryParams = [])

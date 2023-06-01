@@ -8,13 +8,16 @@ use Kreatif\ServiceConnector\ApiException;
 
 abstract class Api
 {
-    public static function request($method, $url, $bodyParams = [], $queryParams = [])
+    public static function request($method, $url, $bodyParams = [], $queryParams = [], $rawBody = '')
     {
         $query = GuzzleHttp\Psr7\Query::build($queryParams);
         $query = $query ? "?{$query}" : '';
+        $clangId = \rex_clang::getCurrentId();
 
         $apiUrl      = \rex_config::get('kreatif/shopware', 'api_url');
         $swAccessKey = \rex_config::get('kreatif/shopware', 'api_acces_key');
+        $swLanguageId = \rex_config::get('kreatif/shopware', 'lang_' . $clangId);
+
         if ($apiUrl == '' || $swAccessKey == '') {
             throw new \Exception('Shopware API URL or Access Key is not set');
         }
@@ -23,6 +26,7 @@ abstract class Api
             'Accept'        => 'application/json',
             'Content-Type'  => 'application/json',
             'sw-access-key' => $swAccessKey,
+            'sw-language-id' => $swLanguageId,
         ];
 
         try {
