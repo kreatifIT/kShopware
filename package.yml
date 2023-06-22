@@ -6,6 +6,7 @@ requires:
     redaxo: '>=5.14'
 
 
+
 page:
     title: Shopware
     prio: 30
@@ -17,3 +18,13 @@ page:
             icon: rex-icon fa-gear
             itemclass:
             perm: kShopware[]
+
+
+
+pages:
+    shopwarelinks:
+        title: Shopware_Links
+        main: true
+        block: system
+        hidden: true
+        popup: true
