@@ -36,6 +36,7 @@ class rex_api_kreatif_shopware_products extends Api
                             'value' => true,
                         ],
                     ],
+                    'total-count-mode' => true,
                 ],
             ]
         );
